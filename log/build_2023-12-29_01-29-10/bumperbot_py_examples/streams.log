@@ -1,0 +1,35 @@
+[0.818s] Invoking command in '/home/timi/bumperbot_ws/src/bumperbot_py_examples': PYTHONPATH=/home/timi/bumperbot_ws/build/bumperbot_py_examples/prefix_override:/home/timi/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bumperbot_py_examples build --build-base /home/timi/bumperbot_ws/build/bumperbot_py_examples/build install --record /home/timi/bumperbot_ws/build/bumperbot_py_examples/install.log --single-version-externally-managed
+[1.014s] running egg_info
+[1.015s] creating ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info
+[1.015s] writing ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/PKG-INFO
+[1.015s] writing dependency_links to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/dependency_links.txt
+[1.015s] writing entry points to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/entry_points.txt
+[1.015s] writing requirements to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/requires.txt
+[1.015s] writing top-level names to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/top_level.txt
+[1.015s] writing manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[1.017s] reading manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[1.017s] writing manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[1.017s] running build
+[1.018s] running build_py
+[1.018s] creating /home/timi/bumperbot_ws/build/bumperbot_py_examples/build
+[1.018s] creating /home/timi/bumperbot_ws/build/bumperbot_py_examples/build/lib
+[1.018s] creating /home/timi/bumperbot_ws/build/bumperbot_py_examples/build/lib/bumperbot_py_examples
+[1.018s] copying bumperbot_py_examples/__init__.py -> /home/timi/bumperbot_ws/build/bumperbot_py_examples/build/lib/bumperbot_py_examples
+[1.018s] running install
+[1.022s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.022s]   warnings.warn(
+[1.022s] running install_lib
+[1.023s] creating /home/timi/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples
+[1.023s] copying /home/timi/bumperbot_ws/build/bumperbot_py_examples/build/lib/bumperbot_py_examples/__init__.py -> /home/timi/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples
+[1.023s] byte-compiling /home/timi/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples/__init__.py to __init__.cpython-310.pyc
+[1.023s] running install_data
+[1.023s] creating /home/timi/bumperbot_ws/install/bumperbot_py_examples/share/ament_index
+[1.023s] creating /home/timi/bumperbot_ws/install/bumperbot_py_examples/share/ament_index/resource_index
+[1.024s] creating /home/timi/bumperbot_ws/install/bumperbot_py_examples/share/ament_index/resource_index/packages
+[1.024s] copying resource/bumperbot_py_examples -> /home/timi/bumperbot_ws/install/bumperbot_py_examples/share/ament_index/resource_index/packages
+[1.024s] copying package.xml -> /home/timi/bumperbot_ws/install/bumperbot_py_examples/share/bumperbot_py_examples
+[1.024s] running install_egg_info
+[1.025s] Copying ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info to /home/timi/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages/bumperbot_py_examples-0.0.0-py3.10.egg-info
+[1.026s] running install_scripts
+[1.043s] writing list of installed files to '/home/timi/bumperbot_ws/build/bumperbot_py_examples/install.log'
+[1.063s] Invoked command in '/home/timi/bumperbot_ws/src/bumperbot_py_examples' returned '0': PYTHONPATH=/home/timi/bumperbot_ws/build/bumperbot_py_examples/prefix_override:/home/timi/bumperbot_ws/install/bumperbot_py_examples/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bumperbot_py_examples build --build-base /home/timi/bumperbot_ws/build/bumperbot_py_examples/build install --record /home/timi/bumperbot_ws/build/bumperbot_py_examples/install.log --single-version-externally-managed
