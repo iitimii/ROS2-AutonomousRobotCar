@@ -9,6 +9,7 @@ setup.py
 ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/top_level.txt
 ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/zip-safe
 bumperbot_py_examples/__init__.py
+bumperbot_py_examples/simple_publisher.py
 resource/bumperbot_py_examples
 test/test_copyright.py
 test/test_flake8.py
