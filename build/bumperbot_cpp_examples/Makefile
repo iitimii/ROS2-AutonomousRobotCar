@@ -210,6 +210,56 @@ simple_publisher/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_publisher.dir/build.make CMakeFiles/simple_publisher.dir/build
 .PHONY : simple_publisher/fast
 
+#=============================================================================
+# Target rules for targets named simple_subscriber
+
+# Build rule for target.
+simple_subscriber: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_subscriber
+.PHONY : simple_subscriber
+
+# fast build rule for target.
+simple_subscriber/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_subscriber.dir/build.make CMakeFiles/simple_subscriber.dir/build
+.PHONY : simple_subscriber/fast
+
+#=============================================================================
+# Target rules for targets named simple_parameter
+
+# Build rule for target.
+simple_parameter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_parameter
+.PHONY : simple_parameter
+
+# fast build rule for target.
+simple_parameter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_parameter.dir/build.make CMakeFiles/simple_parameter.dir/build
+.PHONY : simple_parameter/fast
+
+src/simple_parameter.o: src/simple_parameter.cpp.o
+.PHONY : src/simple_parameter.o
+
+# target to build an object file
+src/simple_parameter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_parameter.dir/build.make CMakeFiles/simple_parameter.dir/src/simple_parameter.cpp.o
+.PHONY : src/simple_parameter.cpp.o
+
+src/simple_parameter.i: src/simple_parameter.cpp.i
+.PHONY : src/simple_parameter.i
+
+# target to preprocess a source file
+src/simple_parameter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_parameter.dir/build.make CMakeFiles/simple_parameter.dir/src/simple_parameter.cpp.i
+.PHONY : src/simple_parameter.cpp.i
+
+src/simple_parameter.s: src/simple_parameter.cpp.s
+.PHONY : src/simple_parameter.s
+
+# target to generate assembly for a file
+src/simple_parameter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_parameter.dir/build.make CMakeFiles/simple_parameter.dir/src/simple_parameter.cpp.s
+.PHONY : src/simple_parameter.cpp.s
+
 src/simple_publisher.o: src/simple_publisher.cpp.o
 .PHONY : src/simple_publisher.o
 
@@ -234,6 +284,30 @@ src/simple_publisher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_publisher.dir/build.make CMakeFiles/simple_publisher.dir/src/simple_publisher.cpp.s
 .PHONY : src/simple_publisher.cpp.s
 
+src/simple_subscriber.o: src/simple_subscriber.cpp.o
+.PHONY : src/simple_subscriber.o
+
+# target to build an object file
+src/simple_subscriber.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_subscriber.dir/build.make CMakeFiles/simple_subscriber.dir/src/simple_subscriber.cpp.o
+.PHONY : src/simple_subscriber.cpp.o
+
+src/simple_subscriber.i: src/simple_subscriber.cpp.i
+.PHONY : src/simple_subscriber.i
+
+# target to preprocess a source file
+src/simple_subscriber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_subscriber.dir/build.make CMakeFiles/simple_subscriber.dir/src/simple_subscriber.cpp.i
+.PHONY : src/simple_subscriber.cpp.i
+
+src/simple_subscriber.s: src/simple_subscriber.cpp.s
+.PHONY : src/simple_subscriber.s
+
+# target to generate assembly for a file
+src/simple_subscriber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_subscriber.dir/build.make CMakeFiles/simple_subscriber.dir/src/simple_subscriber.cpp.s
+.PHONY : src/simple_subscriber.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,10 +323,18 @@ help:
 	@echo "... test"
 	@echo "... bumperbot_cpp_examples_uninstall"
 	@echo "... uninstall"
+	@echo "... simple_parameter"
 	@echo "... simple_publisher"
+	@echo "... simple_subscriber"
+	@echo "... src/simple_parameter.o"
+	@echo "... src/simple_parameter.i"
+	@echo "... src/simple_parameter.s"
 	@echo "... src/simple_publisher.o"
 	@echo "... src/simple_publisher.i"
 	@echo "... src/simple_publisher.s"
+	@echo "... src/simple_subscriber.o"
+	@echo "... src/simple_subscriber.i"
+	@echo "... src/simple_subscriber.s"
 .PHONY : help
 
 

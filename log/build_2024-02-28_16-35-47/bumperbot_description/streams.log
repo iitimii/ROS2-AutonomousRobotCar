@@ -1,0 +1,36 @@
+[0.060s] Invoking command in '/home/timi/bumperbot_ws/build/bumperbot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/timi/bumperbot_ws/build/bumperbot_description -- -j2 -l2
+[0.263s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.647s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.828s] -- Added test 'lint_cmake' to check CMake code style
+[0.838s] -- Added test 'xmllint' to check XML markup files
+[0.838s] -- Configuring done
+[0.854s] -- Generating done
+[0.855s] -- Build files have been written to: /home/timi/bumperbot_ws/build/bumperbot_description
+[0.962s] Invoked command in '/home/timi/bumperbot_ws/build/bumperbot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/timi/bumperbot_ws/build/bumperbot_description -- -j2 -l2
+[1.430s] Invoking command in '/home/timi/bumperbot_ws/build/bumperbot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/timi/bumperbot_ws/build/bumperbot_description
+[1.438s] -- Install configuration: ""
+[1.438s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes
+[1.438s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/wheel_right_link.STL
+[1.443s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/imu_link.STL
+[1.445s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/caster_front_link.STL
+[1.448s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/base_link.STL
+[1.525s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/wheel_left_link.STL
+[1.529s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/caster_rear_link.STL
+[1.532s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf
+[1.532s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot.urdf.xacro
+[1.533s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/ament_index/resource_index/package_run_dependencies/bumperbot_description
+[1.534s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/ament_index/resource_index/parent_prefix_path/bumperbot_description
+[1.534s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/environment/ament_prefix_path.sh
+[1.535s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/environment/ament_prefix_path.dsv
+[1.535s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/environment/path.sh
+[1.536s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/environment/path.dsv
+[1.536s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/local_setup.bash
+[1.536s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/local_setup.sh
+[1.536s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/local_setup.zsh
+[1.536s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/local_setup.dsv
+[1.537s] -- Installing: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/package.dsv
+[1.538s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/ament_index/resource_index/packages/bumperbot_description
+[1.538s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/cmake/bumperbot_descriptionConfig.cmake
+[1.538s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/cmake/bumperbot_descriptionConfig-version.cmake
+[1.538s] -- Up-to-date: /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/package.xml
+[1.542s] Invoked command in '/home/timi/bumperbot_ws/build/bumperbot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/timi/bumperbot_ws/build/bumperbot_description
