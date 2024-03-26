@@ -38,7 +38,8 @@
         <visual>
             <origin rpy="-1.571 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://bumperbot_description/meshes/wheel_left_link.STL"/>
+                <!-- <mesh filename="package://bumperbot_description/meshes/wheel_left_link.STL"/> -->
+                <sphere radius="0.033"/>
             </geometry>
         </visual>
     </link>
@@ -78,6 +79,21 @@
         <parent link="base_link"/>
         <child link="caster_rear_link"/>
         <origin rpy="0 0 0" xyz="-0.04755 0 -0.0275"/>
+    </joint>
+
+    <link name="can_link">
+        <visual>
+            <origin xyz="-0.03 0.03 0.0" rpy="1.571 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://bumperbot_description/meshes/can.STL"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="can_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="can_link"/>
+        <origin rpy="0 0 0" xyz="0 0 0.078"/>
     </joint>
 
 </robot>

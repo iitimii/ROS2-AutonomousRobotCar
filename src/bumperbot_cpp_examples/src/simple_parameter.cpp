@@ -5,7 +5,7 @@
 #include <memory>
 
 using std::placeholders::_1;
-
+ 
 class SimpleParameter : public rclcpp::Node
 {
     public:

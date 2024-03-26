@@ -2,6 +2,7 @@
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/imu_link.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/caster_front_link.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/base_link.STL
+/home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/can.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/wheel_left_link.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/caster_rear_link.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot.urdf.xacro
