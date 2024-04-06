@@ -1,9 +1,0 @@
-[0.131s] Invoking command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/timi/bumperbot_ws/build/bumperbot_cpp_examples -- -j2 -l2
-[0.521s] [31mCMake Error at CMakeLists.txt:31:
-[0.521s]   Parse error.  Expected a newline, got identifier with text "kt".
-[0.521s] 
-[0.521s] [0m
-[0.524s] -- Configuring incomplete, errors occurred!
-[0.524s] See also "/home/timi/bumperbot_ws/build/bumperbot_cpp_examples/CMakeFiles/CMakeOutput.log".
-[0.556s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
-[1.090s] Invoked command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/timi/bumperbot_ws/build/bumperbot_cpp_examples -- -j2 -l2

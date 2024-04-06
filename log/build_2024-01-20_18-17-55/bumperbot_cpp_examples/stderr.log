@@ -1,7 +1,0 @@
-[01m[K/home/timi/bumperbot_ws/src/bumperbot_cpp_examples/src/simple_subscriber.cpp:18:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
-   18 | }
-      |  [01;31m[K^[m[K
-      |  [32m[K;[m[K
-gmake[2]: *** [CMakeFiles/simple_subscriber.dir/build.make:76: CMakeFiles/simple_subscriber.dir/src/simple_subscriber.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/simple_subscriber.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2
