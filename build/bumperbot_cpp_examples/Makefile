@@ -236,6 +236,43 @@ simple_parameter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_parameter.dir/build.make CMakeFiles/simple_parameter.dir/build
 .PHONY : simple_parameter/fast
 
+#=============================================================================
+# Target rules for targets named publisher_with_parameter
+
+# Build rule for target.
+publisher_with_parameter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 publisher_with_parameter
+.PHONY : publisher_with_parameter
+
+# fast build rule for target.
+publisher_with_parameter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher_with_parameter.dir/build.make CMakeFiles/publisher_with_parameter.dir/build
+.PHONY : publisher_with_parameter/fast
+
+src/publisher_with_parameter.o: src/publisher_with_parameter.cpp.o
+.PHONY : src/publisher_with_parameter.o
+
+# target to build an object file
+src/publisher_with_parameter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher_with_parameter.dir/build.make CMakeFiles/publisher_with_parameter.dir/src/publisher_with_parameter.cpp.o
+.PHONY : src/publisher_with_parameter.cpp.o
+
+src/publisher_with_parameter.i: src/publisher_with_parameter.cpp.i
+.PHONY : src/publisher_with_parameter.i
+
+# target to preprocess a source file
+src/publisher_with_parameter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher_with_parameter.dir/build.make CMakeFiles/publisher_with_parameter.dir/src/publisher_with_parameter.cpp.i
+.PHONY : src/publisher_with_parameter.cpp.i
+
+src/publisher_with_parameter.s: src/publisher_with_parameter.cpp.s
+.PHONY : src/publisher_with_parameter.s
+
+# target to generate assembly for a file
+src/publisher_with_parameter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher_with_parameter.dir/build.make CMakeFiles/publisher_with_parameter.dir/src/publisher_with_parameter.cpp.s
+.PHONY : src/publisher_with_parameter.cpp.s
+
 src/simple_parameter.o: src/simple_parameter.cpp.o
 .PHONY : src/simple_parameter.o
 
@@ -323,9 +360,13 @@ help:
 	@echo "... test"
 	@echo "... bumperbot_cpp_examples_uninstall"
 	@echo "... uninstall"
+	@echo "... publisher_with_parameter"
 	@echo "... simple_parameter"
 	@echo "... simple_publisher"
 	@echo "... simple_subscriber"
+	@echo "... src/publisher_with_parameter.o"
+	@echo "... src/publisher_with_parameter.i"
+	@echo "... src/publisher_with_parameter.s"
 	@echo "... src/simple_parameter.o"
 	@echo "... src/simple_parameter.i"
 	@echo "... src/simple_parameter.s"

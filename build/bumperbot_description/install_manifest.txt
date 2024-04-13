@@ -5,8 +5,10 @@
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/can.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/wheel_left_link.STL
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/meshes/caster_rear_link.STL
+/home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot_gazebo.xacro
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/urdf/bumperbot.urdf.xacro
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/rviz/display.rviz
+/home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/launch/gazebo.launch.py
 /home/timi/bumperbot_ws/install/bumperbot_description/share/bumperbot_description/launch/display.launch.py
 /home/timi/bumperbot_ws/install/bumperbot_description/share/ament_index/resource_index/package_run_dependencies/bumperbot_description
 /home/timi/bumperbot_ws/install/bumperbot_description/share/ament_index/resource_index/parent_prefix_path/bumperbot_description

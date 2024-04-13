@@ -20,10 +20,15 @@ ament_target_dependencies(simple_subscriber rclcpp std_msgs)
 add_executable(simple_parameter src/simple_parameter.cpp)
 ament_target_dependencies(simple_parameter rclcpp rcl_interfaces)
 
+add_executable(publisher_with_parameter src/publisher_with_parameter.cpp)
+ament_target_dependencies(publisher_with_parameter rclcpp std_msgs)
+
 install(TARGETS 
     simple_publisher
     simple_subscriber
     simple_parameter
+    publisher_with_parameter
+    
     DESTINATION lib/${PROJECT_NAME})
 # uncomment the following section in order to fill in
 # further dependencies manually.
