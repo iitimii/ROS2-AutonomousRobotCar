@@ -1,6 +1,0 @@
-Invoking command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/timi/bumperbot_ws/src/bumperbot_cpp_examples -DCMAKE_INSTALL_PREFIX=/home/timi/bumperbot_ws/install/bumperbot_cpp_examples
-Invoked command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/timi/bumperbot_ws/src/bumperbot_cpp_examples -DCMAKE_INSTALL_PREFIX=/home/timi/bumperbot_ws/install/bumperbot_cpp_examples
-Invoking command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/timi/bumperbot_ws/build/bumperbot_cpp_examples -- -j2 -l2
-Invoked command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/timi/bumperbot_ws/build/bumperbot_cpp_examples -- -j2 -l2
-Invoking command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/timi/bumperbot_ws/build/bumperbot_cpp_examples
-Invoked command in '/home/timi/bumperbot_ws/build/bumperbot_cpp_examples' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/timi/bumperbot_ws/build/bumperbot_cpp_examples
