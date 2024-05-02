@@ -41,11 +41,12 @@ def generate_launch_description():
     )))
 
     spawn_robot = Node(
-        package='gazebo',
+        package='ros_gz',
         executable='spawn_entity.py',
         arguments=['-entity', 'bumperbot', '-topic', 'robot_description'],
         output='screen'
     )
+    
 
     return LaunchDescription([
         env_variable,
