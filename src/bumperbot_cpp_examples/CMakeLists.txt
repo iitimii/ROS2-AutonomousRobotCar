@@ -30,9 +30,7 @@ install(TARGETS
     # publisher_with_parameter
     
     DESTINATION lib/${PROJECT_NAME})
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
