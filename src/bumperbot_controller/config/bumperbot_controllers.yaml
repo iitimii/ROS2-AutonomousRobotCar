@@ -1,3 +1,4 @@
+---
 controller_manager:
   ros__parameters:
     update_rate: 100
@@ -9,6 +10,6 @@ controller_manager:
 
 simple_velocity_controller:
   ros__parameters:
-    joints: 
+    joints:
       - wheel_left_joint
       - wheel_right_joint
