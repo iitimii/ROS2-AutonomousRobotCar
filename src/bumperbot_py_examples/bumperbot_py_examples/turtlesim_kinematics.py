@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from turtlesim.msg import Pose
-from geometry_msgs.msg import Twist
+import math
 
 
 class TurtlesimKinematicsNode(Node):
@@ -23,11 +23,21 @@ class TurtlesimKinematicsNode(Node):
         Tx = self.last_turtle2_pose_.x - self.last_turtle1_pose_.x
         Ty = self.last_turtle2_pose_.y - self.last_turtle1_pose_.y
 
+        theta_rad = self.last_turtle2_pose_.theta - self.last_turtle1_pose_.theta
+        theta_deg = theta_rad * 180 / 3.14159265359
+
 
         self.get_logger().info("""\n
                                Translation vector turtle1 -> turtle2:\n
                                Tx: %f\n
-                               Ty: %f\n""" % (Tx, Ty))
+                               Ty: %f\n
+                               Rotation matrix turtle1 -> turtle2:\n
+                               theta(rad): %f\n
+                               theta(deg): %f\n
+                               |R11   R12| : |%f   %f|\n
+                               |R21   R22| : |%f   %f|\n """ % (Tx, Ty,  theta_rad, theta_deg,
+                                                                math.cos(theta_rad), -math.sin(theta_rad),
+                                                                math.sin(theta_rad), math.cos(theta_rad)))
         
 
 def main():
