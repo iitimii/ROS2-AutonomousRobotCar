@@ -15,8 +15,8 @@ class SimpleTurtlesimKinematics : public rclcpp::Node
     void turtle1PoseCallback(const turtlesim::msg::Pose& pose);
     void turtle2PoseCallback(const turtlesim::msg::Pose& pose);
 
-    public:
+public:
     SimpleTurtlesimKinematics(const std::string& node_name);
-}
+};
 
 #endif
