@@ -21,20 +21,12 @@ void SimpleTurtlesimKinematics::turtle2PoseCallback(const turtlesim::msg::Pose &
     float theta_rad = last_turtle1_pose.theta - last_turtle2_pose.theta;
     float theta_deg = theta_rad * 180 / M_PI;
 
-   char log_buffer[256];
-    int bytes_written = snprintf(log_buffer, sizeof(log_buffer),
-                                 "\\n Translation Vector Turtle1 -> Turtle2\\n"
-                                 "Tx: %.2f\\n"
-                                 "Ty: %.2f\\n"
-                                 "Theta: %.2f\\n",
-                                 Tx, Ty, theta_deg);
+        RCLCPP_INFO_STREAM(get_logger(), "Translation Vector Turtle1 -> Turtle2" << std::endl
+            << "Tx: " << Tx << std::endl
+            << "Ty: " << Ty << std::endl
+            << "Theta: " << theta_deg << std::endl);
+}
 
-    if (bytes_written > 0 && bytes_written < static_cast<int>(sizeof(log_buffer))) {
-        RCLCPP_INFO(get_logger(), "%s", log_buffer);
-    } else {
-        RCLCPP_ERROR(get_logger(), "Failed to format log message");
-}
-}
 
 int main(int argc, char *argv[])
 {
