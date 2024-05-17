@@ -13,6 +13,7 @@ find_package(rcl_interfaces REQUIRED)
 find_package(turtlesim REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(bumperbot_msgs REQUIRED)
 
 include_directories(include)
 
@@ -31,6 +32,9 @@ ament_target_dependencies(turtlesim_kinematics rclcpp turtlesim)
 add_executable(simple_tf_kinematics src/simple_tf_kinematics.cpp)
 ament_target_dependencies(simple_tf_kinematics rclcpp geometry_msgs tf2_ros)
 
+add_executable(simple_service_server src/simple_service_server.cpp)
+ament_target_dependencies(simple_service_server rclcpp bumperbot_msgs)
+
 
 install(
   DIRECTORY include
@@ -43,6 +47,7 @@ install(TARGETS
     simple_parameter
     turtlesim_kinematics
     simple_tf_kinematics
+    simple_service_server
     
     DESTINATION lib/${PROJECT_NAME})
 
