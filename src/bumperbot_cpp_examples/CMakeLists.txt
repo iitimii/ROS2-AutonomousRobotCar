@@ -11,6 +11,8 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rcl_interfaces REQUIRED)
 find_package(turtlesim REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 include_directories(include)
 
@@ -23,11 +25,11 @@ ament_target_dependencies(simple_subscriber rclcpp std_msgs)
 add_executable(simple_parameter src/simple_parameter.cpp)
 ament_target_dependencies(simple_parameter rclcpp rcl_interfaces)
 
-# add_executable(publisher_with_parameter src/publisher_with_parameter.cpp)
-# ament_target_dependencies(publisher_with_parameter rclcpp std_msgs)
-
 add_executable(turtlesim_kinematics src/simple_turtlesim_kinmatics.cpp)
 ament_target_dependencies(turtlesim_kinematics rclcpp turtlesim)
+
+add_executable(simple_tf_kinematics src/simple_tf_kinematics.cpp)
+ament_target_dependencies(simple_tf_kinematics rclcpp geometry_msgs tf2_ros)
 
 
 install(
@@ -39,8 +41,8 @@ install(TARGETS
     simple_publisher
     simple_subscriber
     simple_parameter
-    # publisher_with_parameter
     turtlesim_kinematics
+    simple_tf_kinematics
     
     DESTINATION lib/${PROJECT_NAME})
 

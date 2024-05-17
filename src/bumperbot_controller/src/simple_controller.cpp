@@ -13,13 +13,13 @@ WheelVelocityController::WheelVelocityController(const std::string &node_name) :
     RCLCPP_INFO_STREAM(get_logger(), "Wheel radius: " << wheel_radius);
     RCLCPP_INFO_STREAM(get_logger(), "Wheel seperation: " << wheel_seperation);
 
-    cmd_vel_sub = create_subscription<geometry_msgs::msg::TwistStamped>("/bumperbot_controller/velocity", 10, std::bind(&WheelVelocityController::cmdVelCallback, this, _1));
+    cmd_vel_sub = create_subscription<geometry_msgs::msg::TwistStamped>("/bumperbot_controller/cmd_vel", 10, std::bind(&WheelVelocityController::cmdVelCallback, this, _1));
     wheel_vel_pub = create_publisher<std_msgs::msg::Float64MultiArray>("/simple_velocity_controller/commands", 10);
 
     wheels_to_velocity_matrix << wheel_radius / 2, wheel_radius / 2,
         wheel_radius / wheel_seperation, -wheel_radius / wheel_seperation;
 
-    RCLCPP_INFO(get_logger(), "Simple velocity controller has been started.");
+    RCLCPP_INFO(get_logger(), "Simple velocity controller cpp has been started.");
     RCLCPP_INFO_STREAM(get_logger(), "Wheels to velocity matrix: " << wheels_to_velocity_matrix);
 }
 

@@ -1,4 +1,4 @@
-#!/Users/timii/miniconda3/envs/ros_env/bin/python
+#!/Users/timii/micromamba/envs/ros2_env/bin/python
 
 import rclpy
 from rclpy.node import Node
@@ -24,12 +24,13 @@ class SimpleController(Node):
 
         self.get_logger().info(f"Using wheel radius: {self.wheel_radius}")
         self.get_logger().info(f"Using wheel seperation: {self.wheel_seperation}")
+        self.get_logger().info("Simple Controller Node Py has been started")
 
         self.wheel_cmd_pub = self.create_publisher(
             "simple_velocity_controller/commands", Float64MultiArray, 10
         )
         self.velocity_sub = self.create_subscription(
-            TwistStamped, "bumperbot_controller/velocity", self.velocity_callback, 10
+            TwistStamped, "bumperbot_controller/cmd_vel", self.velocity_callback, 10
         )
 
         self.wheels_to_local_velocity_matrix = np.array(
