@@ -6,10 +6,18 @@ from tf2_ros import TransformBroadcaster, TransformException
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 from bumperbot_msgs.srv import GetTransform
+from tf_transformations import quaternion_from_euler, quaternion_multiply, quaternion_inverse
 
 class SimpleTFKinematics(Node):
     def __init__(self):
         super().__init__("simple_tf_kinematics")
+
+        self.timer_ = self.create_timer(0.1, self.timer_callback)
+        self.x_increment = 0.05
+        self.last_x = 0.0
+        self.rotation_counter_ = 0
+        self.last_orientation_ = quaternion_from_euler(0, 0, 0)
+        self.orientation_increment_ = quaternion_from_euler(0, 0, 0.05)
 
         self.static_tf_broadcaster = StaticTransformBroadcaster(self)
         self.dynamic_tf_broadcaster = TransformBroadcaster(self)
@@ -40,10 +48,6 @@ class SimpleTFKinematics(Node):
             f"Published static transform from {self.static_tf_msg.header.frame_id} to {self.static_tf_msg.child_frame_id}"
         )
 
-        self.timer_ = self.create_timer(0.1, self.timer_callback)
-        self.x_increment = 0.05
-        self.last_x = 0.0
-
         self.get_transform_srv = self.create_service(
             GetTransform, "get_transform", self.get_transform_callback
         )
@@ -57,14 +61,23 @@ class SimpleTFKinematics(Node):
         self.dynamic_tf_msg.transform.translation.y = 0.0
         self.dynamic_tf_msg.transform.translation.z = 0.0
 
-        self.dynamic_tf_msg.transform.rotation.x = 0.0
-        self.dynamic_tf_msg.transform.rotation.y = 0.0
-        self.dynamic_tf_msg.transform.rotation.z = 0.0
-        self.dynamic_tf_msg.transform.rotation.w = 1.0
+        q = quaternion_multiply(self.last_orientation_, self.orientation_increment_)
+
+        self.dynamic_tf_msg.transform.rotation.x = q[0]
+        self.dynamic_tf_msg.transform.rotation.y = q[1]
+        self.dynamic_tf_msg.transform.rotation.z = q[2]
+        self.dynamic_tf_msg.transform.rotation.w = q[3]
 
         self.dynamic_tf_broadcaster.sendTransform(self.dynamic_tf_msg)
 
         self.last_x = self.dynamic_tf_msg.transform.translation.x
+
+        self.rotation_counter_ += 1
+        self.last_orientation_ = q
+
+        if self.rotation_counter_ > 100:
+            self.orientation_increment_ = quaternion_inverse(self.orientation_increment_)
+            self.rotation_counter_ = 0
 
     def get_transform_callback(self, req, res):
         self.get_logger().info(f"Requesting transform from {req.frame_id} to {req.child_frame_id}")
