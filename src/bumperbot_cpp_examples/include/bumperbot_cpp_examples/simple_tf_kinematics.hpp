@@ -11,6 +11,7 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <bumperbot_msgs/srv/get_transform.hpp>
 #include <tf2/exceptions.h>
+#include <tf2/LinearMath/Quaternion.h>
 
 using GetTransform = bumperbot_msgs::srv::GetTransform;
 
@@ -33,6 +34,11 @@ private:
 
     double x_increment_;
     double last_x_;
+
+    int rotations_counter_;
+    tf2::Quaternion orientation_increment_;
+    tf2::Quaternion last_orientation_;
+
 
     void timer_callback_();
     bool get_transform_callback_(const std::shared_ptr<GetTransform::Request> req, const std::shared_ptr<GetTransform::Response> res);
