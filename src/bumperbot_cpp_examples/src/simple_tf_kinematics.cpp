@@ -34,7 +34,6 @@ SimpleTfKinematics::SimpleTfKinematics(const std::string &node_name)
     timer_ = create_wall_timer(0.1s, std::bind(&SimpleTfKinematics::timer_callback_, this));
 
     get_transform_srv_ = create_service<GetTransform>("get_transform", std::bind(&SimpleTfKinematics::get_transform_callback_, this, _1, _2));
-
     last_orientation_.setRPY(0, 0, 0);
     orientation_increment_.setRPY(0, 0, 0.05);
 }

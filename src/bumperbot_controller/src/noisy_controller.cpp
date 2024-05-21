@@ -1,8 +1,9 @@
-#include <bumperbot_controller/simple_controller.hpp>
+#include <bumperbot_controller/noisy_controller.hpp>
+#include <random>
 
 using std::placeholders::_1;
 
-WheelVelocityController::WheelVelocityController(const std::string &node_name) : Node(node_name),
+NoisyController::NoisyController(const std::string &node_name) : Node(node_name),
  left_wheel_prev_pos_(0.0), right_wheel_prev_pos_(0.0), x_(0.0), y_(0.0), theta_(0.0)
 {
     declare_parameter<double>("wheel_radius", 0.033);
@@ -16,17 +17,15 @@ WheelVelocityController::WheelVelocityController(const std::string &node_name) :
 
     prev_time_ = get_clock()->now();
 
-    cmd_vel_sub = create_subscription<geometry_msgs::msg::TwistStamped>("/bumperbot_controller/cmd_vel", 10, std::bind(&WheelVelocityController::cmdVelCallback, this, _1));
-    joint_sub_ = create_subscription<JointState>("/joint_states", 10, std::bind(&WheelVelocityController::jointCallback, this, _1));
+    joint_sub_ = create_subscription<JointState>("/joint_states", 10, std::bind(&NoisyController::jointCallback, this, _1));
 
-    wheel_vel_pub = create_publisher<std_msgs::msg::Float64MultiArray>("/simple_velocity_controller/commands", 10);
-    odom_pub_ = create_publisher<Odometry>("/bumperbot_controller/odom", 10);
+    odom_pub_ = create_publisher<Odometry>("/bumperbot_controller/odom_noisy", 10);
 
     wheels_to_velocity_matrix << wheel_radius / 2, wheel_radius / 2,
         wheel_radius / wheel_seperation, -wheel_radius / wheel_seperation;
 
     odom_msg_.header.frame_id = "odom"; // Fixed frame
-    odom_msg_.child_frame_id = "base_footprint";
+    odom_msg_.child_frame_id = "base_footprint_ekf";
     odom_msg_.pose.pose.orientation.x = 0.0;
     odom_msg_.pose.pose.orientation.y = 0.0;
     odom_msg_.pose.pose.orientation.z = 0.0;
@@ -34,28 +33,25 @@ WheelVelocityController::WheelVelocityController(const std::string &node_name) :
 
     transform_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
     transform_stamped_.header.frame_id = "odom";
-    transform_stamped_.child_frame_id = "base_footprint";
+    transform_stamped_.child_frame_id = "base_footprint_noisy";
 
-    RCLCPP_INFO(get_logger(), "Simple velocity controller cpp has been started.");
+    RCLCPP_INFO(get_logger(), "Noisy velocity controller cpp has been started.");
     RCLCPP_INFO_STREAM(get_logger(), "Wheels to velocity matrix: " << wheels_to_velocity_matrix);
 }
 
-void WheelVelocityController::cmdVelCallback(const geometry_msgs::msg::TwistStamped &cmd_vel)
+
+void NoisyController::jointCallback(const JointState &msg)
 {
-    Eigen::Vector2d robot_speed(cmd_vel.twist.linear.x, cmd_vel.twist.angular.z);
-    Eigen::Vector2d wheel_velocities = wheels_to_velocity_matrix.inverse() * robot_speed;
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::default_random_engine noise_generator(seed);
+    std::normal_distribution<double> left_encoder_noise(0.0, 0.005);
+    std::normal_distribution<double> right_encoder_noise(0.0, 0.005);
 
-    std_msgs::msg::Float64MultiArray wheel_speed_msg;
-    wheel_speed_msg.data.push_back(wheel_velocities.coeff(1));
-    wheel_speed_msg.data.push_back(wheel_velocities.coeff(0));
+    double wheel_encoder_left = msg.position.at(1) + left_encoder_noise(noise_generator);
+    double wheel_encoder_right = msg.position.at(0) + right_encoder_noise(noise_generator);
 
-    wheel_vel_pub->publish(wheel_speed_msg);
-}
-
-void WheelVelocityController::jointCallback(const JointState &msg)
-{
-    double dp_left = msg.position.at(1) - left_wheel_prev_pos_;
-    double dp_right = msg.position.at(0) - right_wheel_prev_pos_;
+    double dp_left = wheel_encoder_left - left_wheel_prev_pos_;
+    double dp_right =wheel_encoder_right - right_wheel_prev_pos_;
 
     rclcpp::Time msg_time = msg.header.stamp;
     rclcpp::Duration dt = msg_time - prev_time_;
@@ -114,7 +110,7 @@ void WheelVelocityController::jointCallback(const JointState &msg)
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<WheelVelocityController>("simple_velocity_controller");
+    auto node = std::make_shared<NoisyController>("noisy_controller");
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;

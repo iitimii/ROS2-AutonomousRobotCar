@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, GroupAction
+from launch.actions import DeclareLaunchArgument, GroupAction, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition, UnlessCondition
 
@@ -7,6 +7,11 @@ from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
 
+def noisy_controller(context, *args, **kwargs):
+    wheel_radius = float(LaunchConfiguration("wheel_radius").perform(context))
+    wheel_separation = float(LaunchConfiguration("wheel_separation").perform(context))
+    wheel_radius_error = float(LaunchConfiguration("wheel_radius_error").perform(context))
+    wheel_separation_error = float(LaunchConfiguration("wheel_separation_error").perform(context))
 
 def generate_launch_description():
 
@@ -14,6 +19,8 @@ def generate_launch_description():
     wheel_radius_arg = DeclareLaunchArgument("wheel_radius", default_value="0.033", description="Wheel Radius")
     wheel_separation_arg = DeclareLaunchArgument("wheel_separation", default_value="0.17",description="Wheel separation")
     use_simple_controller_arg = DeclareLaunchArgument("use_simple_controller", default_value="true")
+    wheel_radius_error_arg = DeclareLaunchArgument("wheel_radius_error", default_value="0.005", description="Wheel Radius Error")
+    wheel_separation_error_arg = DeclareLaunchArgument("wheel_separation_error", default_value="0.02",description="Wheel Separation Error")
 
     use_python = LaunchConfiguration("use_python")
     wheel_radius = LaunchConfiguration("wheel_radius")
@@ -79,6 +86,8 @@ def generate_launch_description():
         wheel_vel_controller_cpp,
         # wheel_vel_controller
     ])
+
+    noisy_controller_launch = OpaqueFunction(function*noisy_controller)
 
     return LaunchDescription([
         use_python_arg,
