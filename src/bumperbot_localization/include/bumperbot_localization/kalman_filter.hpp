@@ -28,8 +28,8 @@ class KalmanFilter : public rclcpp::Node
     double motion_variance_;
     double measurement_varienace_;
 
-    void odomCallback(Odometry& msg);
-    void imuCallback(Imu& msg);
+    void odomCallback(const Odometry& msg);
+    void imuCallback(const Imu& msg);
     void measurementUpdate();
     void statePrediction();
 
