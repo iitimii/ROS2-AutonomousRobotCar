@@ -5,7 +5,7 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
-def get_launch_description():
+def generate_launch_description():
 
     static_transform_publisher = Node(
         package="tf2_ros",
